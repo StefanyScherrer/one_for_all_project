@@ -1,10 +1,5 @@
-SELECT 
-  COUNT(H.usuario_id) "musicas_no_historico" 
-FROM 
-  pessoa_usuaria PU
-INNER JOIN 
-  historico_usuario H 
-ON
-  H.usuario_id = PU.pessoa_id
-WHERE
-  PU.nome = "Barbara Liskov";
+SELECT COUNT(h.song_id) AS musicas_no_historico FROM SpotifyClone.users AS u
+	INNER JOIN SpotifyClone.historical AS h
+		ON u.user_id = h.user_id
+    WHERE u.`name` = 'Barbara Liskov'
+    GROUP BY u.`name`;

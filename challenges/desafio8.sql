@@ -1,7 +1,4 @@
-SELECT 
-  A.nome "artista", AL.nome "album" 
-FROM 
-  artista A 
-INNER JOIN 
-  album AL ON AL.artista_id = A.artista_id 
-WHERE A.nome = "Elis Regina";
+SELECT a.`name` AS `artista`, al.`name` AS 'album' FROM SpotifyClone.`albuns` AS al
+	INNER JOIN SpotifyClone.artists AS a
+		ON al.artist_id = a.artist_id
+        HAVING a.`name` = 'Elis Regina';
